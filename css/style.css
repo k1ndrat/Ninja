@@ -571,6 +571,7 @@ html.loaded {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 2rem;
+  width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -932,6 +933,14 @@ html.loaded {
   .main-page__container {
     padding-bottom: 30.5rem;
   }
+
+  .body-main__title {
+    font-size: 3rem;
+  }
+
+  .body-main__title span {
+    font-size: 3.625rem;
+  }
 }
 
 @media (min-width: 105em) {
@@ -1019,6 +1028,14 @@ html.loaded {
 
   .main-page__container {
     padding-bottom: 6.25rem;
+  }
+
+  .body-main__title {
+    font-size: 2.5rem;
+  }
+
+  .body-main__title span {
+    font-size: 2.5rem;
   }
 }
 
@@ -1200,6 +1217,39 @@ html.loaded {
   }
 }
 
+@media (max-width: 28.875em) {
+  .body-main__button {
+    width: 80%;
+  }
+}
+
+@media (max-width: 26.5625em) {
+  .swiper {
+    width: 340px;
+  }
+
+  .swiper-slide {
+    width: 18.75rem;
+    height: 25.213675rem;
+  }
+}
+
+@media (max-width: 23.4375em) {
+  .swiper {
+    width: 290px;
+    padding-left: 0rem;
+  }
+
+  .swiper-slide {
+    width: 18.125rem;
+    height: 24.373125rem;
+  }
+
+  .swiper-buttons {
+    margin-left: 0rem;
+  }
+}
+
 @media (min-width: 48em) and (max-width: 105em) {
 @supports (font-size: clamp( 1.875rem , 1.5592105263rem  +  0.6578947368vw , 2.25rem )) {
     .header__logo-text {
@@ -1324,6 +1374,30 @@ html.loaded {
 @supports not (padding-bottom: clamp( 6.25rem , 0.6672661871rem  +  27.9136690647vw , 30.5rem )) {
     .main-page__container {
       padding-bottom: calc(6.25rem + 24.25 * (100vw - 20rem) / 86.875);
+    }
+}
+
+@supports (font-size: clamp( 2.5rem , 2.3848920863rem  +  0.5755395683vw , 3rem )) {
+    .body-main__title {
+      font-size: clamp( 2.5rem , 2.3848920863rem  +  0.5755395683vw , 3rem );
+    }
+}
+
+@supports not (font-size: clamp( 2.5rem , 2.3848920863rem  +  0.5755395683vw , 3rem )) {
+    .body-main__title {
+      font-size: calc(2.5rem + 0.5 * (100vw - 20rem) / 86.875);
+    }
+}
+
+@supports (font-size: clamp( 2.5rem , 2.2410071942rem  +  1.2949640288vw , 3.625rem )) {
+    .body-main__title span {
+      font-size: clamp( 2.5rem , 2.2410071942rem  +  1.2949640288vw , 3.625rem );
+    }
+}
+
+@supports not (font-size: clamp( 2.5rem , 2.2410071942rem  +  1.2949640288vw , 3.625rem )) {
+    .body-main__title span {
+      font-size: calc(2.5rem + 1.125 * (100vw - 20rem) / 86.875);
     }
 }
 }

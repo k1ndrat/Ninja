@@ -423,13 +423,14 @@
         changeActiveCard();
     }
     function changeActiveCard() {
+        cardWidth = allCards[0].clientWidth;
         for (let index = 0; index < allCards.length; index++) allCards[index].classList.remove("_active");
         allCards[current_index_card - 1].classList.add("_active");
         if (mq1500.matches) swiper.style.transform = `translateX(0px)`; else if (mq800.matches) swiper.style.transform = `translateX(${deltaWidth1500}px)`; else swiper.style.transform = `translateX(${deltaWidth800}px)`;
     }
     let autoPlayInterval = setInterval((() => {
         clickNext();
-    }), 3e3);
+    }), 5e3);
     button_next.addEventListener("click", (function() {
         clickNext();
         clearInterval(autoPlayInterval);
