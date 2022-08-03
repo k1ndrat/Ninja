@@ -981,7 +981,7 @@ html.loaded {
 
 @media (max-width: 50em) {
   .swiper {
-    width: 391px;
+    width: 391px !important;
   }
 }
 
@@ -1225,7 +1225,7 @@ html.loaded {
 
 @media (max-width: 26.5625em) {
   .swiper {
-    width: 340px;
+    width: 340px !important;
   }
 
   .swiper-slide {
@@ -1236,7 +1236,7 @@ html.loaded {
 
 @media (max-width: 23.4375em) {
   .swiper {
-    width: 290px;
+    width: 290px !important;
     padding-left: 0rem;
   }
 
