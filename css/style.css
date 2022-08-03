@@ -652,11 +652,15 @@ html.loaded {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  gap: 1.25rem;
 }
 
 .swiper-slide {
-  -webkit-filter: brightness(50%);
-          filter: brightness(50%);
+  filter: brightness(50%) drop-shadow(0px 2px 44px rgba(14, 44, 99, 0.3));
+  -webkit-filter: brightness(50%) drop-shadow(0px 2px 44px rgba(14, 44, 99, 0.3));
   height: 29.5rem;
   width: 21.9375rem;
   position: relative;
@@ -673,8 +677,8 @@ html.loaded {
 }
 
 .swiper-slide._active {
-  -webkit-filter: brightness(100%);
-          filter: brightness(100%);
+  filter: brightness(100%) drop-shadow(10px 10px 74px rgba(0, 224, 255, 0.15));
+  -webkit-filter: brightness(100%) drop-shadow(10px 10px 74px rgba(0, 224, 255, 0.15));
 }
 
 .swiper-slide._active .swiper-slide__body {
@@ -692,7 +696,6 @@ html.loaded {
 }
 
 .swiper-slide._active .swiper-slide__border {
-  text-shadow: 10px 10px 74px rgba(0, 224, 255, 0.15);
   opacity: 1;
 }
 
@@ -745,7 +748,6 @@ html.loaded {
   -webkit-transition: all 0.5s ease 0.2s;
   -o-transition: all 0.5s ease 0.2s;
   transition: all 0.5s ease 0.2s;
-  text-shadow: 0px 2px 44px rgba(14, 44, 99, 0.3);
   height: 100%;
   z-index: 1;
 }
@@ -968,6 +970,12 @@ html.loaded {
   }
 }
 
+@media (max-width: 50em) {
+  .swiper {
+    width: 391px;
+  }
+}
+
 @media (max-width: 48em) {
   .header__logo-text {
     font-size: 1.875rem;
@@ -1011,6 +1019,31 @@ html.loaded {
 
   .main-page__container {
     padding-bottom: 6.25rem;
+  }
+}
+
+@media (max-width: 93.75em) {
+  .swiper {
+    width: 762px;
+    margin: auto;
+    padding-left: 1.25rem;
+  }
+
+  .swiper-slide:first-child,
+  .swiper-slide:last-child {
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+
+  .swiper-buttons {
+    -webkit-transform: translate(0, 100%);
+        -ms-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: -1.25rem;
   }
 }
 

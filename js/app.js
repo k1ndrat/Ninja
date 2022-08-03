@@ -384,20 +384,48 @@
     da.init();
     const button_next = document.querySelector(".swiper-button-next");
     const button_prev = document.querySelector(".swiper-button-prev");
+    const swiper = document.querySelector(".main-page__wrapper");
+    const mq1500 = window.matchMedia("(min-width: 1500px)");
+    const mq800 = window.matchMedia("(min-width: 800px)");
     const allCards = document.querySelectorAll(".main-page__slide");
     let current_index_card = 3;
+    if (mq1500.matches) {
+        swiper.style.transform = `translateX(0px)`;
+        current_index_card = 3;
+    } else current_index_card = 1;
+    let cardWidth = allCards[0].clientWidth;
+    let gap = 20;
+    let deltaWidth1500;
+    let deltaWidth800;
     changeActiveCard();
     function clickNext() {
-        if (4 == current_index_card) current_index_card = 1; else current_index_card += 1;
+        if (4 == current_index_card) {
+            current_index_card = 1;
+            deltaWidth1500 = 0;
+            deltaWidth800 = 0;
+        } else {
+            current_index_card += 1;
+            deltaWidth1500 = -(cardWidth + gap) * (current_index_card - 2);
+            deltaWidth800 = -(cardWidth + gap) * (current_index_card - 1);
+        }
         changeActiveCard();
     }
     function clickPrev() {
-        if (1 == current_index_card) current_index_card = 4; else current_index_card -= 1;
+        if (1 == current_index_card) {
+            current_index_card = 4;
+            deltaWidth1500 = 2 * -(cardWidth + gap);
+            deltaWidth800 = 3 * -(cardWidth + gap);
+        } else {
+            current_index_card -= 1;
+            deltaWidth1500 = -(cardWidth + gap) * (current_index_card - 1);
+            deltaWidth800 = -(cardWidth + gap) * (current_index_card - 1);
+        }
         changeActiveCard();
     }
     function changeActiveCard() {
         for (let index = 0; index < allCards.length; index++) allCards[index].classList.remove("_active");
         allCards[current_index_card - 1].classList.add("_active");
+        if (mq1500.matches) swiper.style.transform = `translateX(0px)`; else if (mq800.matches) swiper.style.transform = `translateX(${deltaWidth1500}px)`; else swiper.style.transform = `translateX(${deltaWidth800}px)`;
     }
     let autoPlayInterval = setInterval((() => {
         clickNext();
