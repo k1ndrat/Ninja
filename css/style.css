@@ -165,8 +165,6 @@ body {
 
 .header._header-scroll {
   background-color: rgba(0, 0, 0, 0.7);
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
 }
 
 .header__container {
@@ -651,7 +649,6 @@ html.loaded {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  gap: 1.25rem;
 }
 
 .swiper-slide {
@@ -672,11 +669,13 @@ html.loaded {
           transform: translate(0, -59%);
 }
 
+.swiper-slide-active,
 .swiper-slide._active {
   filter: brightness(100%);
   -webkit-filter: brightness(100%);
 }
 
+.swiper-slide-active .swiper-slide__body,
 .swiper-slide._active .swiper-slide__body {
   background-color: rgba(10, 24, 49, 0.3);
   -webkit-backdrop-filter: blur(6px);
@@ -691,10 +690,12 @@ html.loaded {
   transition: transform 0.3s ease 0s, backdrop-filter 0.5s ease 0.3s, background-color 0.5s ease 0.3s, -webkit-transform 0.3s ease 0s, -webkit-backdrop-filter 0.5s ease 0.3s;
 }
 
+.swiper-slide-active .swiper-slide__border,
 .swiper-slide._active .swiper-slide__border {
   opacity: 1;
 }
 
+.swiper-slide-active .body-slide__title,
 .swiper-slide._active .body-slide__title {
   -webkit-transition: all 0.5s ease 0.3s;
   -o-transition: all 0.5s ease 0.3s;
@@ -702,6 +703,7 @@ html.loaded {
   color: #00e0ff;
 }
 
+.swiper-slide-active .body-slide__bid,
 .swiper-slide._active .body-slide__bid {
   -webkit-transition: all 0.5s ease 0.3s;
   -o-transition: all 0.5s ease 0.3s;
@@ -709,6 +711,8 @@ html.loaded {
   opacity: 0.5;
 }
 
+.swiper-slide-active .body-slide__icon,
+.swiper-slide-active .body-slide__text,
 .swiper-slide._active .body-slide__icon,
 .swiper-slide._active .body-slide__text {
   -webkit-transition: all 0.5s ease 0.5s;
@@ -916,7 +920,18 @@ html.loaded {
           transform: rotate(180deg);
 }
 
+@media (min-width: 23.4375em) {
+  .swiper-wrapper {
+    gap: 1.25rem;
+  }
+}
+
 @media (min-width: 47.99875em) {
+  .header._header-scroll {
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+  }
+
   .header__icon {
     -webkit-filter: drop-shadow(8px 8px 20px rgba(0, 130, 148, 0.15));
             filter: drop-shadow(8px 8px 20px rgba(0, 130, 148, 0.15));
@@ -927,6 +942,7 @@ html.loaded {
     -webkit-filter: brightness(50%) drop-shadow(0px 2px 44px rgba(14, 44, 99, 0.3));
   }
 
+  .swiper-slide-active,
   .swiper-slide._active {
     filter: brightness(100%) drop-shadow(10px 10px 74px rgba(0, 224, 255, 0.15));
     -webkit-filter: brightness(100%) drop-shadow(10px 10px 74px rgba(0, 224, 255, 0.15));
