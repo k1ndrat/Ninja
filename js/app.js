@@ -389,10 +389,7 @@
     const mq800 = window.matchMedia("(min-width: 800px)");
     const allCards = document.querySelectorAll(".main-page__slide");
     let current_index_card = 3;
-    if (mq1500.matches) {
-        swiper.style.transform = `translateX(0px)`;
-        current_index_card = 3;
-    } else current_index_card = 1;
+    if (mq1500.matches) current_index_card = 3; else current_index_card = 1;
     let cardWidth = allCards[0].clientWidth;
     let gap = 20;
     let deltaWidth1500;
