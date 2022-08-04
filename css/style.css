@@ -655,6 +655,8 @@ html.loaded {
 }
 
 .swiper-slide {
+  filter: brightness(50%);
+  -webkit-filter: brightness(50%);
   height: 29.5rem;
   width: 21.9375rem;
   position: relative;
@@ -670,8 +672,15 @@ html.loaded {
           transform: translate(0, -59%);
 }
 
+.swiper-slide._active {
+  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+}
+
 .swiper-slide._active .swiper-slide__body {
   background-color: rgba(10, 24, 49, 0.3);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -754,10 +763,11 @@ html.loaded {
           align-items: center;
   padding: 0.3125rem 0.5rem;
   background: rgba(10, 24, 49, 0.4);
-  /* White */
   border: 0.5px solid #ffffff;
   -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   border-radius: 8px;
 }
 
@@ -856,6 +866,8 @@ html.loaded {
 }
 
 .swiper-button {
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
   -webkit-box-flex: 0;
       -ms-flex: 0 0 7.625rem;
           flex: 0 0 7.625rem;
@@ -870,6 +882,11 @@ html.loaded {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   cursor: pointer;
+}
+
+.swiper-button:hover {
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
 }
 
 .swiper-button-prev {
@@ -897,6 +914,23 @@ html.loaded {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+@media (min-width: 47.99875em) {
+  .header__icon {
+    -webkit-filter: drop-shadow(8px 8px 20px rgba(0, 130, 148, 0.15));
+            filter: drop-shadow(8px 8px 20px rgba(0, 130, 148, 0.15));
+  }
+
+  .swiper-slide {
+    filter: brightness(50%) drop-shadow(0px 2px 44px rgba(14, 44, 99, 0.3));
+    -webkit-filter: brightness(50%) drop-shadow(0px 2px 44px rgba(14, 44, 99, 0.3));
+  }
+
+  .swiper-slide._active {
+    filter: brightness(100%) drop-shadow(10px 10px 74px rgba(0, 224, 255, 0.15));
+    -webkit-filter: brightness(100%) drop-shadow(10px 10px 74px rgba(0, 224, 255, 0.15));
+  }
 }
 
 @media (min-width: 106.875em) {
@@ -1172,6 +1206,10 @@ html.loaded {
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
+  }
+
+  .main-page__decor {
+    display: none;
   }
 }
 
