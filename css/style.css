@@ -385,6 +385,9 @@ html.loaded {
   opacity: 1;
 }
 
+.no-webp .main-page{
+  background-image: url(../img/hero-section/background.png); }
+
 .main-page {
   background-color: #031923;
 }
@@ -657,8 +660,6 @@ html.loaded {
 }
 
 .swiper-slide {
-  filter: brightness(50%) drop-shadow(0px 2px 44px rgba(14, 44, 99, 0.3));
-  -webkit-filter: brightness(50%) drop-shadow(0px 2px 44px rgba(14, 44, 99, 0.3));
   height: 29.5rem;
   width: 21.9375rem;
   position: relative;
@@ -674,15 +675,8 @@ html.loaded {
           transform: translate(0, -59%);
 }
 
-.swiper-slide._active {
-  filter: brightness(100%) drop-shadow(10px 10px 74px rgba(0, 224, 255, 0.15));
-  -webkit-filter: brightness(100%) drop-shadow(10px 10px 74px rgba(0, 224, 255, 0.15));
-}
-
 .swiper-slide._active .swiper-slide__body {
   background-color: rgba(10, 24, 49, 0.3);
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -769,9 +763,6 @@ html.loaded {
   border: 0.5px solid #ffffff;
   -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
-  /* Note: backdrop-filter has minimal browser support */
   border-radius: 8px;
 }
 
@@ -786,8 +777,6 @@ html.loaded {
           transform: translate(0, 46%);
   padding: 0.25rem 0.75rem 0.5rem;
   border-bottom-left-radius: 1rem;
-  -webkit-backdrop-filter: blur(none);
-          backdrop-filter: blur(none);
   -webkit-transition: background-color 0.3s ease 0s, -webkit-transform 0.3s ease 0s, -webkit-backdrop-filter 0.1s ease 0s;
   transition: background-color 0.3s ease 0s, -webkit-transform 0.3s ease 0s, -webkit-backdrop-filter 0.1s ease 0s;
   -o-transition: transform 0.3s ease 0s, backdrop-filter 0.1s ease 0s, background-color 0.3s ease 0s;
@@ -872,8 +861,6 @@ html.loaded {
 }
 
 .swiper-button {
-  -webkit-filter: brightness(60%);
-          filter: brightness(60%);
   -webkit-box-flex: 0;
       -ms-flex: 0 0 7.625rem;
           flex: 0 0 7.625rem;
@@ -888,11 +875,6 @@ html.loaded {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   cursor: pointer;
-}
-
-.swiper-button:hover {
-  -webkit-filter: brightness(100%);
-          filter: brightness(100%);
 }
 
 .swiper-button-prev {
@@ -1404,3 +1386,5 @@ html.loaded {
     color: #00e0ff;
   }
 }
+
+.webp .main-page{ background-image: url(../img/hero-section/background.webp); }
