@@ -385,9 +385,6 @@ html.loaded {
   opacity: 1;
 }
 
-.no-webp .main-page{
-  background-image: url(../img/hero-section/background.png); }
-
 .main-page {
   background-color: #031923;
 }
@@ -1407,5 +1404,3 @@ html.loaded {
     color: #00e0ff;
   }
 }
-
-.webp .main-page{ background-image: url(../img/hero-section/background.webp); }
