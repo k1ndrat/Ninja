@@ -949,6 +949,14 @@ html.loaded {
   }
 }
 
+@media (min-width: 93.75em) {
+  .swiper {
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
 @media (min-width: 106.875em) {
   .main-page__container {
     padding-top: 11.75rem;
@@ -1006,6 +1014,7 @@ html.loaded {
 @media (max-width: 50em) {
   .swiper {
     width: 391px !important;
+    padding-left: 1.25rem;
   }
 }
 
@@ -1067,7 +1076,6 @@ html.loaded {
   .swiper {
     width: 762px;
     margin: auto;
-    padding-left: 1.25rem;
   }
 
   .swiper-slide:first-child,
