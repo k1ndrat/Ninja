@@ -3595,13 +3595,9 @@
     }));
     let isInit = false;
     if (window.addEventListener) window.addEventListener("resize", (function() {
-        console.log(`sliders ${isInit}`);
         if (window.innerWidth <= 1500 && !isInit) {
             let allActiveCards = document.querySelectorAll("._active");
-            for (let index = 0; index < allActiveCards.length; index++) {
-                allActiveCards[index].classList.remove("_active");
-                console.log("zbs");
-            }
+            for (let index = 0; index < allActiveCards.length; index++) allActiveCards[index].classList.remove("_active");
             initSliders();
             isInit = true;
         } else if (window.innerWidth > 1500) isInit = false;
@@ -3746,32 +3742,12 @@
     let current_index_card = 3;
     if (mq1500.matches) current_index_card = 3; else current_index_card = 1;
     let cardWidth = allCards[0].clientWidth;
-    let gap = 20;
-    let deltaWidth1500;
-    let deltaWidth800;
     function clickNext() {
-        console.log("click");
-        if (4 == current_index_card) {
-            current_index_card = 1;
-            deltaWidth1500 = 0;
-            deltaWidth800 = 0;
-        } else {
-            current_index_card += 1;
-            deltaWidth1500 = -(cardWidth + gap) * (current_index_card - 2);
-            deltaWidth800 = -(cardWidth + gap) * (current_index_card - 1);
-        }
+        if (4 == current_index_card) current_index_card = 1; else current_index_card += 1;
         changeActiveCard();
     }
     function clickPrev() {
-        if (1 == current_index_card) {
-            current_index_card = 4;
-            deltaWidth1500 = 2 * -(cardWidth + gap);
-            deltaWidth800 = 3 * -(cardWidth + gap);
-        } else {
-            current_index_card -= 1;
-            deltaWidth1500 = -(cardWidth + gap) * (current_index_card - 1);
-            deltaWidth800 = -(cardWidth + gap) * (current_index_card - 1);
-        }
+        if (1 == current_index_card) current_index_card = 4; else current_index_card -= 1;
         changeActiveCard();
     }
     function changeActiveCard() {
@@ -3791,29 +3767,29 @@
     }
     button_next.addEventListener("click", (function() {
         if (window.innerWidth > 1500) {
-            console.log("mouse_click");
             clickNext();
             clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval((() => {
+                clickNext();
+            }), 5e3);
         }
     }));
     button_prev.addEventListener("click", (function() {
         if (window.innerWidth > 1500) {
             clickPrev();
             clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval((() => {
+                clickNext();
+            }), 5e3);
         }
     }));
     let allDuplicateCards;
     if (window.addEventListener) window.addEventListener("resize", (function() {
-        console.log(script_isInit);
         if (window.innerWidth > 1500 && !script_isInit) {
             allDuplicateCards = document.querySelectorAll(".swiper-slide-duplicate");
-            for (let index = 0; index < allDuplicateCards.length; index++) {
-                allDuplicateCards[index].remove();
-                console.log("zbs");
-            }
+            for (let index = 0; index < allDuplicateCards.length; index++) allDuplicateCards[index].remove();
             current_index_card = 3;
             changeActiveCard();
-            console.log("Init");
             script_isInit = true;
             autoPlayInterval = setInterval((() => {
                 clickNext();
@@ -3825,11 +3801,7 @@
         if (window.innerWidth <= 1500 && script_isInit) {
             clearInterval(autoPlayInterval);
             allActiveCards = document.querySelectorAll("._active");
-            if (allActiveCards.length > 0) for (let index = 0; index < allActiveCards.length; index++) {
-                allActiveCards[index].classList.remove("_active");
-                console.log("zbs");
-            }
-            console.log("unInit");
+            if (allActiveCards.length > 0) for (let index = 0; index < allActiveCards.length; index++) allActiveCards[index].classList.remove("_active");
             script_isInit = false;
         }
     }));

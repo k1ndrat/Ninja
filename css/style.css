@@ -164,7 +164,7 @@ body {
 }
 
 .header._header-scroll {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .header__container {
@@ -435,48 +435,69 @@ html.loaded {
 }
 
 .main-page__decor_meteor-left-up {
-  left: 0.9375rem;
+  top: 7.925%;
+  left: calc(-17.85714% + 15px);
   opacity: 0.1;
   width: 51.3228070175%;
-  height: 77.51625rem;
-  -webkit-transform: translate(-34.18%, 6.671%);
-      -ms-transform: translate(-34.18%, 6.671%);
-          transform: translate(-34.18%, 6.671%);
+  height: 118.7988505747%;
+  -webkit-animation: blick 0.3s linear infinite alternate;
+          animation: blick 0.3s linear infinite alternate;
+}
+
+@-webkit-keyframes blick {
+  0% {
+    opacity: 0.07;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes blick {
+  0% {
+    opacity: 0.07;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
 }
 
 .main-page__decor_meteor-left-down {
-  left: 0.9375rem;
+  left: calc(-14.821% + 15px);
+  top: -1.81992%;
   opacity: 0.1;
+  -webkit-animation: blick 0.3s linear 0.3s infinite alternate;
+          animation: blick 0.3s linear 0.3s infinite alternate;
   width: 54.6549707602%;
-  height: 77.315rem;
-  -webkit-transform: translate(-26.642%, -1.536%);
-      -ms-transform: translate(-26.642%, -1.536%);
-          transform: translate(-26.642%, -1.536%);
+  height: 118.4904214559%;
 }
 
 .main-page__decor_meteor-right-up {
-  right: 0.9375rem;
+  top: 7.925%;
+  -webkit-animation: blick 0.3s linear 0.3s infinite alternate;
+          animation: blick 0.3s linear 0.3s infinite alternate;
+  right: calc(-17.85714% - 15px);
   width: 51.3228070175%;
-  height: 77.51625rem;
-  -webkit-transform: translate(34.18%, 6.671%);
-      -ms-transform: translate(34.18%, 6.671%);
-          transform: translate(34.18%, 6.671%);
+  height: 118.7988505747%;
   opacity: 0.1;
 }
 
 .main-page__decor_meteor-right-down {
-  right: 0.9375rem;
+  right: calc(-14.821% - 15px);
+  top: -1.81992%;
+  -webkit-animation: blick 0.3s linear infinite alternate;
+          animation: blick 0.3s linear infinite alternate;
   opacity: 0.1;
   width: 54.6549707602%;
-  height: 77.315rem;
-  -webkit-transform: translate(26.642%, -1.536%);
-      -ms-transform: translate(26.642%, -1.536%);
-          transform: translate(26.642%, -1.536%);
+  height: 118.4904214559%;
 }
 
 .main-page__decor_round {
+  left: -1.25rem;
   width: 109.298245614%;
-  top: 112px;
+  top: 10.7279693487%;
 }
 
 .main-page__decor_blur_1 {
@@ -678,8 +699,8 @@ html.loaded {
 .swiper-slide-active .swiper-slide__body,
 .swiper-slide._active .swiper-slide__body {
   background-color: rgba(10, 24, 49, 0.3);
+  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -962,10 +983,6 @@ html.loaded {
     padding-top: 11.75rem;
   }
 
-  .main-page__container {
-    padding-bottom: 30.5rem;
-  }
-
   .body-main__title {
     font-size: 3rem;
   }
@@ -1059,10 +1076,6 @@ html.loaded {
     padding-top: 6.25rem;
   }
 
-  .main-page__container {
-    padding-bottom: 6.25rem;
-  }
-
   .body-main__title {
     font-size: 2.5rem;
   }
@@ -1073,6 +1086,10 @@ html.loaded {
 }
 
 @media (max-width: 93.75em) {
+  .main-page__container {
+    padding-bottom: 2.375rem;
+  }
+
   .swiper {
     width: 762px;
     margin: auto;
@@ -1137,7 +1154,7 @@ html.loaded {
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     overflow: auto;
-    background-color: rgba(27, 35, 39, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     gap: 1.875rem;
     padding-top: 9.375rem;
     padding-left: 0.9375rem;
@@ -1155,7 +1172,7 @@ html.loaded {
     transition: all 0.3s ease 0s;
     width: 100%;
     height: 5.625rem;
-    background-color: #03272b;
+    background-color: #031923;
     z-index: 2;
   }
 
@@ -1398,18 +1415,6 @@ html.loaded {
 @supports not (padding-top: clamp( 6.25rem , 4.9838129496rem  +  6.3309352518vw , 11.75rem )) {
     .main-page__container {
       padding-top: calc(6.25rem + 5.5 * (100vw - 20rem) / 86.875);
-    }
-}
-
-@supports (padding-bottom: clamp( 6.25rem , 0.6672661871rem  +  27.9136690647vw , 30.5rem )) {
-    .main-page__container {
-      padding-bottom: clamp( 6.25rem , 0.6672661871rem  +  27.9136690647vw , 30.5rem );
-    }
-}
-
-@supports not (padding-bottom: clamp( 6.25rem , 0.6672661871rem  +  27.9136690647vw , 30.5rem )) {
-    .main-page__container {
-      padding-bottom: calc(6.25rem + 24.25 * (100vw - 20rem) / 86.875);
     }
 }
 
