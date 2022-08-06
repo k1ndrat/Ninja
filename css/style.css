@@ -989,6 +989,13 @@ html.loaded {
 }
 
 .swiper-button-prev__text {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none;
+  /* Standard syntax */
   text-align: right;
   font-weight: 600;
   font-size: 1.375rem;
@@ -997,6 +1004,13 @@ html.loaded {
 }
 
 .swiper-button-next__text {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none;
+  /* Standard syntax */
   font-weight: 600;
   font-size: 1.375rem;
   line-height: 0.6363636364;
@@ -1184,7 +1198,12 @@ html.loaded {
 
 .body-item-auction__line {
   width: 21.375rem;
+  width: 98.9955712508%;
   height: 0.125rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  opacity: 0.3;
 }
 
 .body-item-auction__line:not(:last-child) {
@@ -1238,6 +1257,18 @@ html.loaded {
   height: 2.375rem;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.body-item-auction__person-name {
+  font-weight: 600;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.body-item-auction__person-position {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  opacity: 0.5;
 }
 
 @media (min-width: 23.4375em) {
