@@ -2085,9 +2085,6 @@ html.loaded {
   }
 
   .how-to-work-page__items {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -ms-grid-columns: (minmax(18.75rem, 21.1875rem))[1] !important;
     grid-template-columns: repeat(1, minmax(18.75rem, 21.1875rem)) !important;
   }
@@ -2295,13 +2292,13 @@ html.loaded {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-grid-columns: (minmax(18.75rem, 21.1875rem))[2] !important;
-    grid-template-columns: repeat(2, minmax(18.75rem, 21.1875rem)) !important;
+    -ms-grid-columns: (minmax(18.75rem, 21.1875rem))[2];
+    grid-template-columns: repeat(2, minmax(18.75rem, 21.1875rem));
   }
 
   .creators-page__items {
-    -ms-grid-columns: (minmax(12.5rem, 31.965rem))[2] !important;
-    grid-template-columns: repeat(2, minmax(12.5rem, 31.965rem)) !important;
+    -ms-grid-columns: (minmax(12.5rem, 31.965rem))[2];
+    grid-template-columns: repeat(2, minmax(12.5rem, 31.965rem));
     row-gap: 4.25rem;
   }
 
@@ -2310,8 +2307,8 @@ html.loaded {
         -ms-flex-pack: center;
             justify-content: center;
     row-gap: 1.25rem;
-    -ms-grid-columns: (minmax(18.125rem, 23.25rem))[2] !important;
-    grid-template-columns: repeat(2, minmax(18.125rem, 23.25rem)) !important;
+    -ms-grid-columns: (minmax(18.125rem, 23.25rem))[2];
+    grid-template-columns: repeat(2, minmax(18.125rem, 23.25rem));
   }
 }
 
