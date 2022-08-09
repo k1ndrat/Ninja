@@ -1571,6 +1571,7 @@ html.loaded {
 
 .item-how-to-work__icon {
   max-width: 5.9375rem;
+  height: 5.570625rem;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -1965,7 +1966,7 @@ html.loaded {
     margin-bottom: 4rem;
   }
 
-  .item-how-to-work__icon:not(:last-child) {
+  .item-how-to-work__icon-link:not(:last-child) {
     margin-bottom: 0.95rem;
   }
 
@@ -2087,13 +2088,13 @@ html.loaded {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-grid-columns: (minmax(18.75rem, 21.1875rem))[1];
-    grid-template-columns: repeat(1, minmax(18.75rem, 21.1875rem));
+    -ms-grid-columns: (minmax(18.75rem, 21.1875rem))[1] !important;
+    grid-template-columns: repeat(1, minmax(18.75rem, 21.1875rem)) !important;
   }
 
   .creators-page__items {
-    -ms-grid-columns: (minmax(12.5rem, 31.965rem))[1];
-    grid-template-columns: repeat(1, minmax(12.5rem, 31.965rem));
+    -ms-grid-columns: (minmax(12.5rem, 31.965rem))[1] !important;
+    grid-template-columns: repeat(1, minmax(12.5rem, 31.965rem)) !important;
   }
 
   .genesis-page__items {
@@ -2101,8 +2102,8 @@ html.loaded {
         -ms-flex-pack: center;
             justify-content: center;
     row-gap: 1.25rem;
-    -ms-grid-columns: (minmax(18.75rem, 23.25rem))[1];
-    grid-template-columns: repeat(1, minmax(18.75rem, 23.25rem));
+    -ms-grid-columns: (minmax(18.75rem, 23.25rem))[1] !important;
+    grid-template-columns: repeat(1, minmax(18.75rem, 23.25rem)) !important;
   }
 }
 
@@ -2207,7 +2208,7 @@ html.loaded {
     margin-bottom: 1.875rem;
   }
 
-  .item-how-to-work__icon:not(:last-child) {
+  .item-how-to-work__icon-link:not(:last-child) {
     margin-bottom: 0.625rem;
   }
 
@@ -2294,13 +2295,13 @@ html.loaded {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-grid-columns: (minmax(18.75rem, 21.1875rem))[2];
-    grid-template-columns: repeat(2, minmax(18.75rem, 21.1875rem));
+    -ms-grid-columns: (minmax(18.75rem, 21.1875rem))[2] !important;
+    grid-template-columns: repeat(2, minmax(18.75rem, 21.1875rem)) !important;
   }
 
   .creators-page__items {
-    -ms-grid-columns: (minmax(12.5rem, 31.965rem))[2];
-    grid-template-columns: repeat(2, minmax(12.5rem, 31.965rem));
+    -ms-grid-columns: (minmax(12.5rem, 31.965rem))[2] !important;
+    grid-template-columns: repeat(2, minmax(12.5rem, 31.965rem)) !important;
     row-gap: 4.25rem;
   }
 
@@ -2309,8 +2310,8 @@ html.loaded {
         -ms-flex-pack: center;
             justify-content: center;
     row-gap: 1.25rem;
-    -ms-grid-columns: (minmax(18.125rem, 23.25rem))[2];
-    grid-template-columns: repeat(2, minmax(18.125rem, 23.25rem));
+    -ms-grid-columns: (minmax(18.125rem, 23.25rem))[2] !important;
+    grid-template-columns: repeat(2, minmax(18.125rem, 23.25rem)) !important;
   }
 }
 
@@ -2755,13 +2756,13 @@ html.loaded {
 }
 
 @supports (margin-bottom: clamp( 0.625rem , 0.5501798561rem  +  0.3741007194vw , 0.95rem )) {
-    .item-how-to-work__icon:not(:last-child) {
+    .item-how-to-work__icon-link:not(:last-child) {
       margin-bottom: clamp( 0.625rem , 0.5501798561rem  +  0.3741007194vw , 0.95rem );
     }
 }
 
 @supports not (margin-bottom: clamp( 0.625rem , 0.5501798561rem  +  0.3741007194vw , 0.95rem )) {
-    .item-how-to-work__icon:not(:last-child) {
+    .item-how-to-work__icon-link:not(:last-child) {
       margin-bottom: calc(0.625rem + 0.325 * (100vw - 20rem) / 86.875);
     }
 }
