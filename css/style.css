@@ -1249,6 +1249,7 @@ html.loaded {
           justify-content: space-between;
   gap: 0.625rem;
   width: 100%;
+  z-index: 2;
 }
 
 .auctions-page__item {
