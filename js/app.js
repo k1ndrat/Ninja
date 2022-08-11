@@ -3596,8 +3596,8 @@
     let isInit = false;
     if (window.addEventListener) window.addEventListener("resize", (function() {
         if (window.innerWidth <= 1500 && !isInit) {
-            let allActiveCards = document.querySelectorAll("._active");
-            for (let index = 0; index < allActiveCards.length; index++) allActiveCards[index].classList.remove("_active");
+            let allActiveCards = document.querySelectorAll(".swiper-slide-active");
+            for (let index = 0; index < allActiveCards.length; index++) ;
             initSliders();
             isInit = true;
         } else if (window.innerWidth > 1500) isInit = false;
@@ -3752,8 +3752,8 @@
     }
     function changeActiveCard() {
         cardWidth = allCards[0].clientWidth;
-        for (let index = 0; index < allCards.length; index++) allCards[index].classList.remove("_active");
-        allCards[current_index_card - 1].classList.add("_active");
+        for (let index = 0; index < allCards.length; index++) allCards[index].classList.remove("swiper-slide-active");
+        allCards[current_index_card - 1].classList.add("swiper-slide-active");
         swiper.style.transform = `translateX(0px)`;
     }
     let autoPlayInterval;
@@ -3800,11 +3800,36 @@
     if (window.addEventListener) window.addEventListener("resize", (function() {
         if (window.innerWidth <= 1500 && script_isInit) {
             clearInterval(autoPlayInterval);
-            allActiveCards = document.querySelectorAll("._active");
-            if (allActiveCards.length > 0) for (let index = 0; index < allActiveCards.length; index++) allActiveCards[index].classList.remove("_active");
+            allActiveCards = document.querySelectorAll(".swiper-slide-active");
+            if (allActiveCards.length > 0) for (let index = 0; index < allActiveCards.length; index++) ;
             script_isInit = false;
         }
     }));
+    const animItems = document.querySelectorAll("._anim-items");
+    if (animItems.length > 0) {
+        window.addEventListener("scroll", animOnScroll);
+        function animOnScroll() {
+            for (let index = 0; index < animItems.length; index++) {
+                const animItem = animItems[index];
+                const animItemHeight = animItem.offsetHeight;
+                const animItemOffset = offset(animItem).top;
+                const animStart = 4;
+                let animItemPoint = window.innerHeight - animItemHeight / animStart;
+                if (animItemHeight > window.innerHeight) animItemPoint = window.innerHeight - window.innerHeight / animStart;
+                if (pageYOffset > animItemOffset - animItemPoint && pageYOffset < animItemOffset + animItemHeight) animItem.classList.add("_active"); else if (!animItem.classList.contains("_anim-no-hide")) animItem.classList.remove("_active");
+            }
+        }
+        function offset(el) {
+            const rect = el.getBoundingClientRect(), scrollLeft = window.pageXOffset || document.documentElement.scrollLeft, scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            return {
+                top: rect.top + scrollTop,
+                left: rect.left + scrollLeft
+            };
+        }
+        setTimeout((() => {
+            animOnScroll();
+        }), 300);
+    }
     window["FLS"] = true;
     isWebp();
     addLoadedClass();
