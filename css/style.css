@@ -491,7 +491,6 @@ body {
 }
 
 .footer {
-  z-index: 4;
   background-color: #031923;
 }
 
@@ -507,6 +506,7 @@ body {
 }
 
 .footer__top-content {
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -517,6 +517,7 @@ body {
 }
 
 .footer__bottom-content {
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -530,16 +531,22 @@ body {
 
 .footer__decor {
   position: absolute;
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  -moz-user-select: none;
+       user-select: none;
+  /* Standard syntax */
   bottom: 0;
   height: 100%;
-  width: 100%;
-  z-index: -1;
-  left: 0%;
+  width: 112.2807017544%;
+  left: -7%;
 }
 
 .footer__decor img {
   height: 100%;
-  z-index: -1;
+  width: 100%;
 }
 
 .footer__decor .blur {
@@ -548,8 +555,8 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(3, 25, 35, 0)), to(rgba(4, 26, 36, 0.1)));
   background: -o-linear-gradient(top, rgba(3, 25, 35, 0) 0%, rgba(4, 26, 36, 0.1) 100%);
   background: linear-gradient(180deg, rgba(3, 25, 35, 0) 0%, rgba(4, 26, 36, 0.1) 100%);
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   height: 100%;
   bottom: 0;
   height: 100%;
@@ -675,6 +682,12 @@ body {
 
 .bottom-footer__social img:hover {
   opacity: 1;
+}
+
+body,
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #000 rgba(0, 0, 0, 0.7);
 }
 
 .loader {
@@ -2738,6 +2751,10 @@ body {
   .item-top-footer__menu-link {
     font-size: 1.125rem;
   }
+
+  .loader__img img {
+    max-height: 4.5rem;
+  }
 }
 
 @media (max-width: 50em) {
@@ -2842,6 +2859,10 @@ body {
 
   .top-footer__logo-text {
     font-size: 1.875rem;
+  }
+
+  .loader__img img {
+    max-height: 3.125rem;
   }
 }
 
@@ -3760,6 +3781,18 @@ body {
 @supports not (font-size: clamp( 1.875rem , 1.5592105263rem  +  0.6578947368vw , 2.25rem )) {
     .top-footer__logo-text {
       font-size: calc(1.875rem + 0.375 * (100vw - 48rem) / 57);
+    }
+}
+
+@supports (max-height: clamp( 3.125rem , 1.9671052632rem  +  2.4122807018vw , 4.5rem )) {
+    .loader__img img {
+      max-height: clamp( 3.125rem , 1.9671052632rem  +  2.4122807018vw , 4.5rem );
+    }
+}
+
+@supports not (max-height: clamp( 3.125rem , 1.9671052632rem  +  2.4122807018vw , 4.5rem )) {
+    .loader__img img {
+      max-height: calc(3.125rem + 1.375 * (100vw - 48rem) / 57);
     }
 }
 }
