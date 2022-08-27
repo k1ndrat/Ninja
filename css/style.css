@@ -705,13 +705,16 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-animation: loader_anim 2s ease alternate forwards;
-          animation: loader_anim 2s ease alternate forwards;
+  -webkit-animation: loader_anim 1.5s ease alternate forwards;
+          animation: loader_anim 1.5s ease alternate forwards;
 }
 
-.loader__img {
-  -webkit-animation: spin_logo 1s ease 0.2s alternate forwards;
-          animation: spin_logo 1s ease 0.2s alternate forwards;
+.loader__img .q1 {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: spin_logo 1s ease 0s alternate forwards;
+          animation: spin_logo 1s ease 0s alternate forwards;
 }
 
 @-webkit-keyframes loader_anim {
@@ -1290,6 +1293,10 @@ html {
   margin-bottom: 0.25rem;
 }
 
+.body-slide__title:hover {
+  text-decoration: underline;
+}
+
 .body-slide__bid {
   font-size: 14px;
   line-height: 21px;
@@ -1844,6 +1851,10 @@ html {
   font-weight: 600;
   line-height: 1.5;
   opacity: 0.8;
+}
+
+.body-item-auction__person-name:hover {
+  text-decoration: underline;
 }
 
 .body-item-auction__person-position {
@@ -2752,7 +2763,7 @@ html {
     font-size: 1.125rem;
   }
 
-  .loader__img img {
+  .loader__img svg {
     max-height: 4.5rem;
   }
 }
@@ -2861,7 +2872,7 @@ html {
     font-size: 1.875rem;
   }
 
-  .loader__img img {
+  .loader__img svg {
     max-height: 3.125rem;
   }
 }
@@ -3785,13 +3796,13 @@ html {
 }
 
 @supports (max-height: clamp( 3.125rem , 1.9671052632rem  +  2.4122807018vw , 4.5rem )) {
-    .loader__img img {
+    .loader__img svg {
       max-height: clamp( 3.125rem , 1.9671052632rem  +  2.4122807018vw , 4.5rem );
     }
 }
 
 @supports not (max-height: clamp( 3.125rem , 1.9671052632rem  +  2.4122807018vw , 4.5rem )) {
-    .loader__img img {
+    .loader__img svg {
       max-height: calc(3.125rem + 1.375 * (100vw - 48rem) / 57);
     }
 }
