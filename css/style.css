@@ -1094,7 +1094,6 @@ html {
 
 .swiper {
   position: relative;
-  z-index: 5;
 }
 
 .swiper-wrapper {
@@ -1111,6 +1110,7 @@ html {
 }
 
 .swiper-slide {
+  z-index: 5;
   filter: brightness(50%);
   -webkit-filter: brightness(50%);
   height: 29.5rem;
@@ -1197,6 +1197,7 @@ html {
 }
 
 .swiper-slide__content {
+  z-index: 4;
   position: relative;
   overflow: hidden;
   border-radius: 12px;
@@ -1224,7 +1225,7 @@ html {
   -o-transition: all 0.5s ease 0.2s;
   transition: all 0.5s ease 0.2s;
   height: 100%;
-  z-index: 1;
+  z-index: 5;
 }
 
 .swiper-slide__timer {
@@ -1284,8 +1285,6 @@ html {
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
-  /* identical to box height */
-  /* Primary */
   color: #fff;
 }
 
@@ -1300,8 +1299,6 @@ html {
 .body-slide__bid {
   font-size: 14px;
   line-height: 21px;
-  /* identical to box height */
-  /* White */
   color: #ffffff;
   opacity: 0;
   -webkit-transition: all 0.2s ease 0s;
@@ -1336,7 +1333,7 @@ html {
 
 .swiper-buttons {
   position: relative;
-  z-index: 5;
+  z-index: 1;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1352,7 +1349,6 @@ html {
 
 .swiper-button {
   position: relative;
-  z-index: 5;
   -webkit-filter: brightness(60%);
           filter: brightness(60%);
   -webkit-box-flex: 0;

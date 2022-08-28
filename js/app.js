@@ -3830,6 +3830,11 @@
             animOnScroll();
         }), 300);
     }
+    const listOfTipElements = document.querySelectorAll("a");
+    console.log(listOfTipElements);
+    listOfTipElements.forEach((element => {
+        element.title = element.innerText;
+    }));
     window["FLS"] = true;
     isWebp();
     addLoadedClass();
