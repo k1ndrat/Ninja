@@ -281,10 +281,6 @@ body {
   z-index: 10;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  opacity: 0;
-  -webkit-transform: translate(0, -100%);
-      -ms-transform: translate(0, -100%);
-          transform: translate(0, -100%);
   -webkit-transition: padding 0.3s ease 0s, opacity 1s ease 1.5s, -webkit-transform 1s ease 1.5s;
   transition: padding 0.3s ease 0s, opacity 1s ease 1.5s, -webkit-transform 1s ease 1.5s;
   -o-transition: padding 0.3s ease 0s, transform 1s ease 1.5s, opacity 1s ease 1.5s;
@@ -294,13 +290,6 @@ body {
 
 .header._header-scroll {
   background-color: rgba(0, 0, 0, 0.9);
-}
-
-.header._active {
-  opacity: 1;
-  -webkit-transform: translate(0);
-      -ms-transform: translate(0);
-          transform: translate(0);
 }
 
 .header__container {
